@@ -23,10 +23,11 @@ jobs:
           distribution: 'zulu'
           java-version: '21'
 
-      - name: 📦 Instalar dependências
-        run: |
-          npm install -g appium
-          pip install robotframework robotframework-appiumlibrary
+      - name: Appium Install
+        run: npm install -g appium
+
+      - name: Robot Framework Install
+        run: pip install robotframework robotframework-appiumlibrary
 
       - name: Appium Doctor
         run: |
