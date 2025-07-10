@@ -14,15 +14,8 @@ jobs:
 
     steps:
       - name: 🛎️ Checkout do código
-        uses:  actions/upload-artifact@v3
+        uses:  actions/checkout@v4
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: ./path/to/artifact
-
-        
       - name: 📦 Instalar dependências
         run: |
           sudo apt update
@@ -49,7 +42,7 @@ jobs:
           robot --outputdir results tests/
 
       - name: 📤 Upload dos logs e relatórios
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: results/
