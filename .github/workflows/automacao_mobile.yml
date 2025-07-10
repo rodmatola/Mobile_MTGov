@@ -36,7 +36,9 @@ jobs:
           # appium driver install uiautomator2
 
       - name: Env vars
-        run: export PATH=$PATH:$ANDROID_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/lib:$ANDROID_HOME/tools/lib:$ANDROID_HOME/bin
+        run: |
+          export PATH=$PATH:$ANDROID_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/lib:$ANDROID_HOME/tools/lib:$ANDROID_HOME/bin
+          adb devices
       
       - name: Appium Doctor
         run: |
