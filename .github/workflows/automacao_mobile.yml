@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+env:
+  ANDROID_AVD: emulator
+
 jobs:
   test:
     runs-on: ubuntu-latest
