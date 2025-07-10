@@ -29,17 +29,18 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      - name: Env vars
+        run: |
+          export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+          echo $ANDROID_HOME
+          adb devices
+      
       - name: Appium Install
         run: |
           npm install -g appium
-          appium setup
-          # appium driver install uiautomator2
+          # appium setup
+          appium driver install uiautomator2
 
-      - name: Env vars
-        run: |
-          export PATH=$PATH:$ANDROID_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/lib:$ANDROID_HOME/tools/lib:$ANDROID_HOME/bin
-          adb devices
-      
       - name: Appium Doctor
         run: |
           appium driver doctor uiautomator2
