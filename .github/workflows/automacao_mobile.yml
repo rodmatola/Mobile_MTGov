@@ -38,6 +38,7 @@ jobs:
           echo $ANDROID_HOME
           adb devices
           ls -l $ANDROID_HOME
+          ls -l $ANDROID_HOME/platform-tools
       
       - name: Appium Install
         run: |
