@@ -24,14 +24,18 @@ jobs:
           java-version: '21'
 
       - name: Appium Install
-        run: npm install -g appium
-
-      - name: Robot Framework Install
-        run: pip install robotframework robotframework-appiumlibrary
+        run: |
+          npm install -g appium
+          appium driver install uiautomator2
 
       - name: Appium Doctor
         run: |
           appium driver doctor uiautomator2
+          
+      - name: Robot Framework Install
+        run: pip install robotframework robotframework-appiumlibrary
+
+      
           
       # - name: 🚀 Iniciar Appium Server
       #   run: appium --log-level error > appium.log 2>&1 &
